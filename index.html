@@ -1,16 +1,186 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - CSS Parallax Scrolling  </title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=oY_HPpGUM-2DWeTyAPlNSE46xtRour3-VYrikHxHXbaCSJecCjTNNBPLhoQm5ue6jcQE4MQ_R4dmxgWXWGG5Vw" charset="UTF-8"></script><style>
+  html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #C0B3A0;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.paralax {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.paralax .layer {
+  position: absolute;
+  width: 400%;
+}
+
+.paralax .foreground {
+  height: 50%;
+  bottom: 0;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/foreground.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 30s linear infinite;
+}
+
+.paralax .hills {
+  height: 40%;
+  bottom: 15%;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/hills.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 60s linear infinite;
+}
+
+.paralax .rocks1 {
+  height: 35%;
+  bottom: 25%;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/rocks1.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 120s linear infinite;
+}
+
+.paralax .rocks2 {
+  height: 40%;
+  bottom: 15%;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/rocks2.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 240s linear infinite;
+}
+
+@keyframes slideshow {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes dayToNight {
+  0% {
+    -webkit-filter: hue-rotate(0deg) brightness(1);
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  50% {
+    -webkit-filter: hue-rotate(180deg) brightness(0.1);
+    filter: hue-rotate(180deg) brightness(0.1);
+  }
+  100% {
+    -webkit-filter: hue-rotate(0deg) brightness(1);
+    filter: hue-rotate(0deg) brightness(1);
+  }
+}
+/**	
+* Nonatomic Branding
+*/
+#link {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.img-url {
+  text-decoration: none;
+}
+
+.url {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: purple;
+}
+
+a:active {
+  color: white;
+}
+
+#small-logo {
+  width: 30px;
+  transform: translate(-10px, 12px);
+  opacity: 1;
+}
+
+/**
+* Versions
+*/
+#versions {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  top: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.url-highlighted {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.url-normal {
+  opacity: 0.5;
+  text-decoration: none;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
 <div class="content">
-	<div class="paralax">
-		<div class="layer rocks2"></div>
-		<div class="layer rocks1"></div>
-		<div class="layer hills"></div>
-		<div class="layer foreground"></div>
-    </div>
+<div class="paralax">
+<div class="layer rocks2"></div>
+<div class="layer rocks1"></div>
+<div class="layer hills"></div>
+<div class="layer foreground"></div>
 </div>
-
-
+</div>
 <div id="link">
-	<a class="url" 
-	   href="http://www.codepen.io/IlyasR" 
-	   target="_blank">Visit my profile!</a>
+<a class="url" href="https://www.codepen.io/IlyasR" target="_blank">Visit my profile!</a>
 </div>
+</body>
+</html>
