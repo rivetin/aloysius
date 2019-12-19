@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>alo-umni</title>
+<style>
+  html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+ 
+  @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+body {
+  margin:0px;
+  font-family:'Roboto';
+  text-align:center;
+}
+
+  $globe-width:   12px;
+$globe-height:  28px;
+$globe-spacing: 40px;
+$globe-spread: 3px;
+$light-off-opacity: 0.4;
+
+
+.lightrope {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  margin: -15px 0 0 0;
+  padding: 0;
+  pointer-events: none;
+  width: 100%;
+  li {
+    position: relative;
+    animation-fill-mode: both; 
+    animation-iteration-count:infinite;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: $globe-width;
+    height: $globe-height;
+    border-radius: 50%;
+    margin: $globe-spacing/2;
+    display: inline-block;
+    background: rgba(0,247,165,1);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,1);
+    animation-name: flash-1;
+    animation-duration: 2s;
+    &:nth-child(2n+1) {
+      background: rgba(0,255,255,1);
+      box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.5);
+      animation-name: flash-2;
+      animation-duration: 0.4s;
+    }
+    &:nth-child(4n+2) {
+      background: rgba(247,0,148,1);
+      box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,1);
+      animation-name: flash-3;
+      animation-duration: 1.1s;
+    }
+    &:nth-child(odd) {
+      animation-duration: 1.8s;
+    }
+    &:nth-child(3n+1) {
+      animation-duration: 1.4s;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      background: #222;
+      width: ($globe-width - 2);
+      height: $globe-height/3;
+      border-radius: 3px;
+      top: (0 - ($globe-height/6));
+      left: 1px;
+    }
+    &:after {
+      content: "";
+      top: (0 - $globe-height/2);
+      left: $globe-width - 3;
+      position: absolute;
+      width: $globe-spacing + 12;
+      height: ($globe-height/3 * 2);
+      border-bottom: solid #222 2px;
+      border-radius: 50%;
+    }
+    &:last-child:after {
+      content: none;
+    }
+    &:first-child {
+      margin-left: -$globe-spacing;
+    }
+  }
+}
+@keyframes flash-1 { 
+    0%, 100% { background: rgba(0,247,165,1);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,1);} 
+    50% { background: rgba(0,247,165,$light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,0.2);}
+}
+@keyframes flash-2 { 
+    0%, 100% { background: rgba(0,255,255,1);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,1);} 
+    50% { background: rgba(0,255,255,$light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,255,255,0.2);}
+}
+@keyframes flash-3 { 
+    0%, 100% { background: rgba(247,0,148,1);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,1);} 
+    50% { background: rgba(247,0,148,$light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,0.2);}
+}
+#container {
+  color:#ffffff;
+  text-transform: uppercase;
+  font-size:36px;
+  font-weight:bold;
+  padding-top:200px;  
+  position:fixed;
+  width:100%;
+  bottom:45%;
+  display:block;
+}
+
+#flip {
+  height:50px;
+  overflow:hidden;
+}
+
+#flip > div > div {
+  color:#fff;
+  padding:4px 12px;
+  height:45px;
+  margin-bottom:45px;
+  display:inline-block;
+}
+
+#flip div:first-child {
+  animation: show 5s linear infinite;
+}
+
+#flip div div {
+  background:#42c58a;
+}
+#flip div:first-child div {
+  background:#4ec7f3;
+}
+#flip div:last-child div {
+  background:#DC143C;
+}
+
+@keyframes show {
+  0% {margin-top:-270px;}
+  5% {margin-top:-180px;}
+  33% {margin-top:-180px;}
+  38% {margin-top:-90px;}
+  66% {margin-top:-90px;}
+  71% {margin-top:0px;}
+  99.99% {margin-top:0px;}
+  100% {margin-top:-270px;}
+}
+
+p {
+  position:fixed;
+  bottom:30px;
+  font-size:20px;
+  color:white;
+  margin-top:200px;
+  background-color: #4CAF50;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+section {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #C0B3A0;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.paralax {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.paralax .layer {
+  position: absolute;
+  width: 400%;
+}
+
+.paralax .foreground {
+  height: 50%;
+  bottom: 0;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/foreground.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 30s linear infinite;
+}
+
+.paralax .hills {
+  height: 40%;
+  bottom: 15%;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/hills.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 60s linear infinite;
+}
+
+.paralax .rocks1 {
+  height: 35%;
+  bottom: 25%;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/rocks1.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 120s linear infinite;
+}
+
+.paralax .rocks2 {
+  height: 40%;
+  bottom: 15%;
+  background: url("http://www.testomic.com/public/codepen-assets/img/paralax/rocks2.png") repeat-x;
+  background-size: 25% 100%;
+  animation: slideshow 240s linear infinite;
+}
+
+@keyframes slideshow {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes dayToNight {
+  0% {
+    -webkit-filter: hue-rotate(0deg) brightness(1);
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  50% {
+    -webkit-filter: hue-rotate(180deg) brightness(0.1);
+    filter: hue-rotate(180deg) brightness(0.1);
+  }
+  100% {
+    -webkit-filter: hue-rotate(0deg) brightness(1);
+    filter: hue-rotate(0deg) brightness(1);
+  }
+}
+/**	
+* Nonatomic Branding
+*/
+#link {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.img-url {
+  text-decoration: none;
+}
+
+
+.url {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: purple;
+}
+
+a:active {
+  color: white;
+}
+
+#small-logo {
+  width: 30px;
+  transform: translate(-10px, 12px);
+  opacity: 1;
+}
+
+/**
+* Versions
+*/
+#versions {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  top: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.url-highlighted {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.url-normal {
+  opacity: 0.5;
+  text-decoration: none;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<a href="link.html"><body translate="no">
+</div>
+<div class="content">
+<div class="paralax">
+<div class="layer rocks2"></div>
+<div class="layer rocks1"></div>
+<div class="layer hills"></div>
+<div class="layer foreground"></div>
+</div>
+<div id=container>
+  LET'S 
+  <div id=flip>
+    <div><div>plan</div></div>
+    <div><div>meet</div></div>
+    <div><div>have fun</div></div>
+  </div>
+  AweSoMe!
+</div>
+  
+</body>
+</a>
+</html>
