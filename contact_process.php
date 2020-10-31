@@ -1,6 +1,6 @@
 <?php
 
-    $to = "athulofficial01@gmail.com";
+    $to = "EMAIL ADDRESS TO RECIEVE THE EMAILS";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
     $subject = $_REQUEST['subject'];
@@ -13,7 +13,7 @@
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    $subject = "You have a message from your Aloysius.ml.";
+    $subject = "You have a message from your YOUR SITE NAME HERE";
 
     $logo = 'img/logo.png';
     $link = '#';
