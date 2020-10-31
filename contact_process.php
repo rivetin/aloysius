@@ -1,5 +1,9 @@
 <?php
-
+$message = $_REQUEST['message'];
+if (!empty($message)) { 
+    header("location:contact.html");
+	exit();
+} 
     $to = "athulofficial01@gmail.com";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
