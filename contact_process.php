@@ -1,6 +1,13 @@
 <?php
 
+$message = $_REQUEST['message'];
+if (!empty($message)) { 
+    header("location:contact.html");
+	exit();
+} 
+
     $to = "EMAIL ADDRESS TO RECIEVE THE EMAILS";
+
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
     $subject = $_REQUEST['subject'];
