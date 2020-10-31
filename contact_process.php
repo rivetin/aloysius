@@ -22,8 +22,9 @@ if (!empty($message)) {
 
     $subject = "You have a message from your YOUR SITE NAME HERE";
 
-    $logo = 'img/logo.png';
-    $link = '#';
+    $logo = 'Path To Logo';
+    $link = 'Website url';
+
 
 	$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Express Mail</title></head><body>";
 	$body .= "<table style='width: 100%;'>";
